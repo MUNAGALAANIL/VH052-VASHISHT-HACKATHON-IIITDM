@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inventory List</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    label {
+        flex-basis: 30%;
+        margin-bottom: 10px;
+    }
+    input[type="text"],
+    input[type="number"] {
+        flex-basis: 65%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    button[type="button"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button[type="button"]:hover {
+        background-color: #555;
+    }
+    .inventory-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Inventory List</h1>
+
+        <form id="addItemForm">
+            <label for="itemName">Item Name:</label>
+            <input type="text" id="itemName" name="itemName" required>
+            <label for="itemPrice">Price:</label>
+            <input type="number" id="itemPrice" name="itemPrice" required>
+            <label for="itemQuantity">Quantity:</label>
+            <input type="number" id="itemQuantity" name="itemQuantity" required>
+            <button type="button" onclick="addItem()">Add Item</button>
+        </form>
+
+        <div id="inventoryItems">
+            <!-- Inventory items will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        let inventory = [];
+
+        function addItem() {
+            const itemName = document.getElementById('itemName').value.trim();
+            const itemPrice = parseFloat(document.getElementById('itemPrice').value);
+            const itemQuantity = parseInt(document.getElementById('itemQuantity').value);
+
+            if (itemName && !isNaN(itemPrice) && !isNaN(itemQuantity) && inventory.length < 10) {
+                inventory.push({ name: itemName, price: itemPrice, quantity: itemQuantity });
+                displayInventory();
+            } else {
+                alert('Please fill in all fields and ensure the inventory list does not exceed 10 items.');
+            }
+        }
+
+        function displayInventory() {
+            const inventoryItems = document.getElementById('inventoryItems');
+            inventoryItems.innerHTML = ''; // Clear previous list
+
+            inventory.forEach((item, index) => {
+                const inventoryItem = document.createElement('div');
+                inventoryItem.classList.add('inventory-item');
+                inventoryItem.textContent = `Item ${index + 1}: ${item.name} - Price: $${item.price} - Quantity: ${item.quantity}`;
+                inventoryItems.appendChild(inventoryItem);
+            });
+        }
+
+        document.getElementById('addItemForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            addItem();
+        });
+
+        displayInventory(); // Display initial inventory
+    </script>
+</body>
+</html>
