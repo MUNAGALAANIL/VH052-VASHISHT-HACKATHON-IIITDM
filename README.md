@@ -5,9 +5,9 @@ WEBSITE TO CONNECT  FARMERS AND MARKETSD DIRECTLY WITHOUT ANY MEDIATORS
 
                                                        ⭐️BRIDGE THE GAP BETWEEN FARMER & MARKET⭐️
 
-Website Link:  https://vh052-vashisht-hackathon-iiitdm.onrender.com    ,Demo Video Link :  
+Website Link:  https://vh052-vashisht-hackathon-iiitdm.onrender.com    ,
+Demo Video Link :  https://drive.google.com/file/d/16hzEoQb89YTLJxTXmHMaVcDGSuAy0Yof/view?usp=drivesdk
 
-Other links: 
 
 Description of Project: Welcome to FARMART, the revolutionary online platform that's changing the way farmers connect with markets. Say goodbye to the hassle of intermediaries and embrace a seamless, direct trade experience that benefits both farmers and consumers alike.At FARMART, we believe in empowering farmers by giving them direct access to markets, enabling them to showcase their produce and connect with buyers without any middlemen. Our user-friendly interface makes it easy for farmers to create profiles, upload product listings, and manage transactions with just a few clicks.
 For markets, we offer a diverse range of fresh, high-quality produce directly sourced from local farmers. By eliminating intermediaries, we ensure fair prices for both farmers and buyers, while also reducing food waste and promoting sustainability in agriculture.
